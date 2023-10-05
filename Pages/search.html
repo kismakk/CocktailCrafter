@@ -7,18 +7,76 @@
     <title>Search</title>
 </head>
 <body>
-    <header>
-        <h1>Cocktail Crafter</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="search.html">Search</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>    
+    <h1 class="logo">Cocktail Crafter</h1> <!-- TODO: insert logo -->
+    <nav class="nav-bar"> <!-- Navigation bar -->
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="search.html">Search</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+    </nav>   
 
-    <main>
+    <main class="search">
+        <section class="search-section">
+            <h2 id="search-header">Search for cocktails</h2>
+            <form>
+                <input type="text" id="search-input" placeholder="Search for cocktails...">
+                <input type="submit" id="search-submit" value="Search">
+            </form>
+        </section>
+        <section class="filter-section">
+            <h3 class="filter-heading">Filter your search by:</h3>
+            <form class="filter-alcoholic">
+                <label for="alcoholic">Alcoholic:</label>
+                <select name="alcoholic" id="alcoholic">
+                    <option value="alcoholic">Alcoholic</option>
+                    <option value="non-alcoholic">Non-alcoholic</option>
+                </select>
+            </form>
+            <form class="filter-spirit">
+                <p id="filter-spirit-p">Spirit</p>
+                <input type="checkbox" id="vodka" name="filter-spirit" value="name">
+                <label for="vodka">Vodka</label><br>
+                <input type="checkbox" id="gin" name="filter-spirit" value="gin">
+                <label for="gin">Gin</label><br>
+                <input type="checkbox" id="rum" name="filter-spirit" value="rum">
+                <label for="rum">Rum</label><br>
+                <input type="checkbox" id="tequila" name="filter-spirit" value="tequila">
+                <label for="tequila">Tequila</label><br>
+                <input type="checkbox" id="whiskey" name="filter-spirit" value="whiskey">
+                <label for="whiskey">Whiskey</label><br>
+            </form>
+            <br>
+            <form class="filter-fruit">
+                <p id="filter-fruit-p">Fruit</p>
+                <input type="checkbox" id="lemon" name="filter-fruit" value="lemon">
+                <label for="lemon">Lemon</label><br>
+                <input type="checkbox" id="lime" name="filter-fruit" value="lime">
+                <label for="lime">Lime</label><br>
+                <input type="checkbox" id="orange" name="filter-fruit" value="orange">
+                <label for="orange">Orange</label><br>
+                <input type="checkbox" id="pineapple" name="filter-fruit" value="pineapple">
+                <label for="pineapple">Pineapple</label><br>
+                <input type="checkbox" id="cranberry" name="filter-fruit" value="cranberry">
+                <label for="cranberry">Cranberry</label><br>
+            </form>
+            <br>
+            <form class="filter-juice">
+                <p id="filter-juice-p">Juice</p>
+                <input type="checkbox" id="lime-juice" name="filter-juice" value="lime_juice">
+                <label for="lime-juice">Lime juice</label><br>
+                <input type="checkbox" id="lemon-juice" name="filter-juice" value="lemon_juice">
+                <label for="lemon-juice">Lemon juice</label><br>
+                <input type="checkbox" id="orange-juice" name="filter-juice" value="orange_juice">
+                <label for="orange_juice">Orange juice</label><br>
+                <input type="checkbox" id="pineapple-juice" name="filter-juice" value="pineapple_juice">
+                <label for="pineapple-juice">Pinepple juice</label><br>
+                <input type="checkbox" id="cranberry" name="filter-juice" value="cranberry">
+                <label for="cranberry">Cranberry juice</label><br>
+            </form>
+        </section>
+        <section class="search-results"> <!-- TODO: display search results -->
 
+        </section>
     </main>
 
     <footer>

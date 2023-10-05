@@ -7,22 +7,24 @@
     <title>Home</title>
 </head>
 <body>
-    <header>
-        <h1>Cocktail Crafter</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="search.html">Search</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>    
+    <h1 class="logo">Cocktail Crafter</h1> <!-- TODO: insert logo -->
+    <nav class="nav-bar"> <!-- Navigation bar -->
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="search.html">Search</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+    </nav>   
 
-    <main>
-        <h2>Find your favorite cocktail</h2>
-        <p>Search for your favorite cocktail by name or ingredient.</p>
-        <form action="pages/search.html">
-            <input type="text" name="search" placeholder="Search...">
-            <input type="submit" value="Go"> 
+    <main class="home">
+        <div class="intro-text">
+            <h2 id="intro-text">Lorem ipsum</h2> <!-- TODO: Catchphrase for site-->
+        </div>
+        <section class="home-info">            
+            <h3 id="info-header">What is Cocktail Crafter?</h3>
+            <p id="info-text">Cocktail Crafter is a website that allows you to search for cocktail recipes. 
+                You can search by name or ingredient.
+            </p>
+        </section>
     </main>
 
     <footer>
