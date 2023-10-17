@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Search</title>
 </head>
 <body>
-    <h1 class="logo">Cocktail Crafter</h1> <!-- TODO: insert logo -->
-    <nav class="nav-bar"> <!-- Navigation bar -->
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="search.html">Search</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link" href="contact.html">Contact</a>
-    </nav>   
+    <div class="container">
+        <h1 class="logo">Cocktail Crafter</h1> <!-- TODO: insert logo -->
+        <nav class="nav-bar"> <!-- Navigation bar -->
+            <a class="nav-link" href="home.html">Home</a>
+            <a class="nav-link" href="search.html">Search</a>
+            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+        </nav>       
+    </div>
 
     <main class="search">
         <section class="search-section">
@@ -23,18 +25,18 @@
                 <input type="submit" id="search-submit" value="Search">
             </form>
         </section>
-        <section class="filter-section">
+        <!-- <section class="filter-section">
             <h3 class="filter-heading">Filter your search by:</h3>
             <form class="filter-alcoholic">
-                <label for="alcoholic">Alcoholic:</label>
-                <select name="alcoholic" id="alcoholic">
-                    <option value="alcoholic">Alcoholic</option>
-                    <option value="non-alcoholic">Non-alcoholic</option>
-                </select>
+                <p>Alcoholic</p>
+                <input type="checkbox" id="alcoholic" name="filter-alcoholic" value="alcoholic">
+                <label for="alcoholic">Alcoholic</label><br>
+                <input type="checkbox" id="non-alcoholic" name="filter-alcoholic" value="non_alcoholic">
+                <label for="non-alcoholic">Non-alcoholic</label><br>
             </form>
             <form class="filter-spirit">
                 <p id="filter-spirit-p">Spirit</p>
-                <input type="checkbox" id="vodka" name="filter-spirit" value="name">
+                <input type="checkbox" id="vodka" name="filter-spirit" value="vodka">
                 <label for="vodka">Vodka</label><br>
                 <input type="checkbox" id="gin" name="filter-spirit" value="gin">
                 <label for="gin">Gin</label><br>
@@ -45,7 +47,6 @@
                 <input type="checkbox" id="whiskey" name="filter-spirit" value="whiskey">
                 <label for="whiskey">Whiskey</label><br>
             </form>
-            <br>
             <form class="filter-fruit">
                 <p id="filter-fruit-p">Fruit</p>
                 <input type="checkbox" id="lemon" name="filter-fruit" value="lemon">
@@ -59,7 +60,6 @@
                 <input type="checkbox" id="cranberry" name="filter-fruit" value="cranberry">
                 <label for="cranberry">Cranberry</label><br>
             </form>
-            <br>
             <form class="filter-juice">
                 <p id="filter-juice-p">Juice</p>
                 <input type="checkbox" id="lime-juice" name="filter-juice" value="lime_juice">
@@ -73,17 +73,19 @@
                 <input type="checkbox" id="cranberry" name="filter-juice" value="cranberry">
                 <label for="cranberry">Cranberry juice</label><br>
             </form>
-            <br>
-            <button id="filter-clear">Clear</button>
+            <input type="submit" value="Apply" id="filter-submit">
+            <input type="submit" value="Reset" id="filter-reset">
         </section>
-        <section class="search-results"> <!-- TODO: display search results -->
-
+        <section> --> <!-- TODO: display search results -->
+            <div id="search-results">
+                <strong>Results: </strong>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; Sami Köngäs 2023</p>
     </footer>    
-    
+    <script src="../Assets/JS/script.js"></script>
 </body>
 </html>
