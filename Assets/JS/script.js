@@ -55,5 +55,3 @@ async function searchCocktail(e) {
     UI.displayDrinks(data);
 }
 
-
-
