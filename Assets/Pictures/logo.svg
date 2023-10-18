@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg3873" viewBox="0 0 612 612" version="1.0">
+  <g id="g3883" transform="translate(-.0819 -.58539)">
+    <path id="path3885" stroke="#000" stroke-width="3.408" d="m82.432 17.924c-41.335 0-64.571 21.371-64.571 65.036v450.12c0 40.84 20.891 62.23 62.192 62.23h452.03c41.3 0 62.22-20.32 62.22-62.23v-450.12c0-42.6-20.92-65.036-63.52-65.036 0 0-448.49-0.142-448.35 0z"/>
+    <g id="g3887">
+      <path id="path3889" fill="#fff" d="m121.06 119.85h362.48l-157.52 194.57v124.61h87.19c29.25 0 29.5 44.09 0 44.09h-217.5c-29.5 0-29.5-44.09 0-44.09h85.71v-125.56l-160.36-193.62z"/>
+      <g id="g3891">
+        <path id="path3893" d="m331.21 257.15c15.53 0 28.13-12.59 28.13-28.12 0-15.54-12.6-28.13-28.13-28.13s-28.12 12.59-28.12 28.13c0 15.53 12.59 28.12 28.12 28.12z"/>
+      </g>
+    </g>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>aiga bar bg</dc:title>
+        <dc:date>2009-05-02T19:52:17</dc:date>
+        <dc:description>Set of international airport symbols.&#xD;\n&#xD;\nSource: http://www.aiga.org/content.cfm/symbol-signs&#xD;\n&#xD;\nConverted to SVG by Jean-Victor Balin.</dc:description>
+        <dc:source>http://openclipart.org/detail/25725/aiga-bar-bg-by-anonymous-25725</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Anonymous</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>aiga</rdf:li>
+            <rdf:li>aiga bg</rdf:li>
+            <rdf:li>alcohol</rdf:li>
+            <rdf:li>bar</rdf:li>
+            <rdf:li>black and white</rdf:li>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>drink</rdf:li>
+            <rdf:li>externalsource</rdf:li>
+            <rdf:li>glass</rdf:li>
+            <rdf:li>image</rdf:li>
+            <rdf:li>map symbol</rdf:li>
+            <rdf:li>martini</rdf:li>
+            <rdf:li>media</rdf:li>
+            <rdf:li>png</rdf:li>
+            <rdf:li>public domain</rdf:li>
+            <rdf:li>sign</rdf:li>
+            <rdf:li>silhouette</rdf:li>
+            <rdf:li>svg</rdf:li>
+            <rdf:li>symbol</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
