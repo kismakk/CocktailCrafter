@@ -22,19 +22,23 @@ class UI {
             
             let ingredientsOutput = '';
             ingredients.forEach(ingredient => {
-                ingredientsOutput += `<li>${ingredient}</li>`;
+                ingredientsOutput += `<li class="card-text">${ingredient}</li>`;
             });
 
             console.log(ingredients); 
             output += `
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">${drink.strDrink}</h3>
-                </div>
-                <div class="card-body">
-                    <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}" class="card-img-top">
-                    ${ingredientsOutput}
-                    <p class="card-text">${drink.strInstructions}</p>
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="${drink.strDrinkThumb}" class="img-fluid rounded-start" alt="${drink.strDrink}">
+                        </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">${drink.strDrink}</h5>
+                            <p class="card-text">${ingredientsOutput}</p>
+                            <p class="card-text"><small class="text-body-secondary">${drink.strInstructions}</small></p>
+                        </div>
+                    </div>
                 </div>
             </div>
             `;
@@ -45,6 +49,7 @@ class UI {
 
 async function searchCocktail(e) {
     e.preventDefault();
+    console.log(searchBtn);
     let value = document.getElementById('search-input').value;
     console.log(value);
     let url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${value}`;
