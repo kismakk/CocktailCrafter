@@ -2,6 +2,8 @@ const searchBtn = document.getElementById("search-submit");
 searchBtn.addEventListener("click", searchCocktail);
 let cocktails = [];
 
+document.addEventListener("DOMContentLoaded", getAllDrinks); // TODO: fix this, fires up every page load
+
 class UI {
 
     static displayDrinks(data) {
@@ -27,24 +29,20 @@ class UI {
 
             console.log(ingredients); 
             output += `
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="${drink.strDrinkThumb}" class="img-fluid rounded-start" alt="${drink.strDrink}">
-                        </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">${drink.strDrink}</h5>
-                            <p class="card-text">${ingredientsOutput}</p>
-                            <p class="card-text"><small class="text-body-secondary">${drink.strInstructions}</small></p>
-                        </div>
+            <div class="col-md-4 mb-3"> 
+                <div class="card">
+                    <img src="${drink.strDrinkThumb}" class="card-img-top" alt="Drink">
+                    <div class="card-body">
+                        <h5 class="card-title">${drink.strDrink}</h5>
+                        <a href="#" class="btn btn-danger btn-sm">See more</a>
                     </div>
                 </div>
-            </div>
+            </div>    
             `;
         });
         document.getElementById('search-results').innerHTML = output;
     }
+    // TODO: error message rendering
 }
 
 async function searchCocktail(e) {
@@ -59,4 +57,14 @@ async function searchCocktail(e) {
     console.log(data);
     UI.displayDrinks(data);
 }
+
+async function getAllDrinks() {
+    let url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=`;
+    let response = await fetch(url);
+    let data = await response.json();
+    console.log(data);
+    UI.displayDrinks(data);
+}
+
+// TODO: clicking see more brings out modal with more info
 
