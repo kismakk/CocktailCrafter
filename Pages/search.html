@@ -7,85 +7,64 @@
     <title>Search</title>
 </head>
 <body>
-    <div class="container">
-        <h1 class="logo">Cocktail Crafter</h1> <!-- TODO: insert logo -->
-        <nav class="nav-bar"> <!-- Navigation bar -->
-            <a class="nav-link" href="home.html">Home</a>
-            <a class="nav-link" href="search.html">Search</a>
-            <a class="nav-link" href="about.html">About</a>
-            <a class="nav-link" href="contact.html">Contact</a>
-        </nav>       
-    </div>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="../Assets/Pictures/logo.svg" alt="Logo" style="width:40px" class="img-fluid mx-auto d-block">
+          </a>
+            <a class="navbar-brand" href="#">Cocktail Crafter</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="search.html">Search</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
 
-    <main class="search">
-        <section class="search-section">
-            <h2 id="search-header">Search for cocktails</h2>
-            <form>
-                <input type="text" id="search-input" placeholder="Search for cocktails...">
-                <input type="submit" id="search-submit" value="Search">
-            </form>
-        </section>
-        <!-- <section class="filter-section">
-            <h3 class="filter-heading">Filter your search by:</h3>
-            <form class="filter-alcoholic">
-                <p>Alcoholic</p>
-                <input type="checkbox" id="alcoholic" name="filter-alcoholic" value="alcoholic">
-                <label for="alcoholic">Alcoholic</label><br>
-                <input type="checkbox" id="non-alcoholic" name="filter-alcoholic" value="non_alcoholic">
-                <label for="non-alcoholic">Non-alcoholic</label><br>
-            </form>
-            <form class="filter-spirit">
-                <p id="filter-spirit-p">Spirit</p>
-                <input type="checkbox" id="vodka" name="filter-spirit" value="vodka">
-                <label for="vodka">Vodka</label><br>
-                <input type="checkbox" id="gin" name="filter-spirit" value="gin">
-                <label for="gin">Gin</label><br>
-                <input type="checkbox" id="rum" name="filter-spirit" value="rum">
-                <label for="rum">Rum</label><br>
-                <input type="checkbox" id="tequila" name="filter-spirit" value="tequila">
-                <label for="tequila">Tequila</label><br>
-                <input type="checkbox" id="whiskey" name="filter-spirit" value="whiskey">
-                <label for="whiskey">Whiskey</label><br>
-            </form>
-            <form class="filter-fruit">
-                <p id="filter-fruit-p">Fruit</p>
-                <input type="checkbox" id="lemon" name="filter-fruit" value="lemon">
-                <label for="lemon">Lemon</label><br>
-                <input type="checkbox" id="lime" name="filter-fruit" value="lime">
-                <label for="lime">Lime</label><br>
-                <input type="checkbox" id="orange" name="filter-fruit" value="orange">
-                <label for="orange">Orange</label><br>
-                <input type="checkbox" id="pineapple" name="filter-fruit" value="pineapple">
-                <label for="pineapple">Pineapple</label><br>
-                <input type="checkbox" id="cranberry" name="filter-fruit" value="cranberry">
-                <label for="cranberry">Cranberry</label><br>
-            </form>
-            <form class="filter-juice">
-                <p id="filter-juice-p">Juice</p>
-                <input type="checkbox" id="lime-juice" name="filter-juice" value="lime_juice">
-                <label for="lime-juice">Lime juice</label><br>
-                <input type="checkbox" id="lemon-juice" name="filter-juice" value="lemon_juice">
-                <label for="lemon-juice">Lemon juice</label><br>
-                <input type="checkbox" id="orange-juice" name="filter-juice" value="orange_juice">
-                <label for="orange_juice">Orange juice</label><br>
-                <input type="checkbox" id="pineapple-juice" name="filter-juice" value="pineapple_juice">
-                <label for="pineapple-juice">Pinepple juice</label><br>
-                <input type="checkbox" id="cranberry" name="filter-juice" value="cranberry">
-                <label for="cranberry">Cranberry juice</label><br>
-            </form>
-            <input type="submit" value="Apply" id="filter-submit">
-            <input type="submit" value="Reset" id="filter-reset">
-        </section>
-        <section> --> <!-- TODO: display search results -->
-            <div id="search-results">
-                <strong>Results: </strong>
+    <section class="bg-dark text-light p-5">
+        <div class="container">
+            <div class="d-sm-flex">
+                <div class="mx-auto text-center">
+                    <h1>Search for <span class="text-danger">cocktails</span></h1>
+                    <p class="lead">Please type the name of the cocktail you want to search</p>
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; Sami Köngäs 2023</p>
-    </footer>    
+    <section class="bg-dark text-light text-center pb-5">
+        <div class="container">
+            <form class="input-group mb-3">
+                <input type="text" class="form-control" id="search-input" placeholder="Search for cocktails..." aria-label="Search for cocktails..." aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-danger" type="button" id="search-submit">Search</button>
+                </div>
+        </div>
+    </section>
+
+    <!-- Display search results-->
+
+    <section class="bg-dark text-light p-5">
+        <div class="" id="search-results">
+
+        </div>
+    </section>
+
     <script src="../Assets/JS/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
