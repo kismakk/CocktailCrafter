@@ -52,8 +52,8 @@
     <!-- Search form -->
 
     <section class="bg-dark text-light text-center pb-5">
-        <div class="container">
-            <form class="input-group">
+        <div class="container" id="input-container">
+            <form class="input-group w-75 mx-auto" id="input-form">
                 <input type="text" class="form-control" id="search-input" placeholder="Search for cocktails..." aria-label="Search for cocktails..." aria-describedby="basic-addon2">
                 <div class="input-group-append">
                   <input type="submit" id="search-submit" value="Search" class="btn btn-danger">
@@ -63,8 +63,8 @@
 
     <!-- Display search results-->
 
-    <section class="bg-dark text-light p-5">
-        <div class="container">
+    <section class="bg-dark text-light pb-3">
+        <div class="container" id="search-container">
           <div class="row" id="search-results"></div>
         </div>
     </section>
