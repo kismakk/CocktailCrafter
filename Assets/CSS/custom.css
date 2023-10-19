@@ -5,3 +5,8 @@
 .card:hover {
     transform: scale(1.05);
 }
+
+.scrollable {
+    overflow-y: auto;
+    max-height: 200px;
+}
