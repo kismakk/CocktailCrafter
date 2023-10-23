@@ -14,14 +14,59 @@ main {
 }
 
 .card {
-    transition: all 0.3s ease;
-}
-
-.card:hover {
-    transform: scale(1.05);
+    max-height: fit-content;
+    width: auto;
 }
 
 .scrollable {
     overflow-y: auto;
-    max-height: 200px;
+    max-height: 300px;
+}
+
+ .fade-in {
+    animation: fadeIn ease-out 0.5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fly-in {
+    animation: flyIn ease-in-out 0.3s both;
+}
+
+@keyframes flyIn {
+    from {
+        opacity: 0;
+        transform: scale(0.75);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.alert-fade {
+    animation: alertFadeIn ease-out 3s;
+}
+
+@keyframes alertFadeIn {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

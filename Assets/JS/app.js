@@ -1,5 +1,9 @@
 const URL = window.location.href;
 const searchBtn = document.getElementById("search-submit");
+const elements = document.querySelectorAll(".fly-in");
+elements.forEach((element, index) => {
+    element.style.animationDelay = `${index * 0.1}s`;
+});
 
 class CocktailDB {
     static async fetchAPI(url) {
@@ -40,27 +44,37 @@ class CocktailUI {
             for (let i = 1; i <= 15; i++) {
                 if (cocktail[`strIngredient${i}`]) {
                     if (cocktail[`strMeasure${i}`]) {
-                        ingredients.push(`${cocktail[`strMeasure${i}`]} ${cocktail[`strIngredient${i}`]}`);
+                        ingredients.push({ amount: cocktail[`strMeasure${i}`], name: cocktail[`strIngredient${i}`] });
                     } else {
-                        ingredients.push(cocktail[`strIngredient${i}`]);
+                        ingredients.push({ amount: '', name: cocktail[`strIngredient${i}`] });
                     }
                 } else {
                     break;
                 }
             }
     
-            let ingredientsOutput = ingredients.map(ingredient => `<li>${ingredient}</li>`).join('');
+            let ingredientsOutput = ingredients
+                .map(ingredient => `<tr><td>${ingredient.amount}</td><td>${ingredient.name}</td></tr>`)
+                .join('');
     
             output += `
-            <div class="col-md-4 mb-3"> 
+            <div class="col-md-4 mb-3 fade-in">
                 <div class="card">
                     <img src="${cocktail.strDrinkThumb}" class="card-img-top" alt="Drink">
                     <div class="card-body">
                         <h5 class="card-title">${cocktail.strDrink}</h5>
                         <div class="scrollable">
-                            <p class="card-text">
-                                <ul>${ingredientsOutput}</ul>
-                            </p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Amount</th>
+                                        <th>Ingredient</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${ingredientsOutput}
+                                </tbody>
+                            </table>
                             <p class="card-text"><small class="text-muted">${cocktail.strInstructions}</small></p>
                         </div>
                     </div>
@@ -69,28 +83,33 @@ class CocktailUI {
         });
     
         document.getElementById('search-results').innerHTML = output;
-    }
+    }    
     
 
     static displayRandomDrink(data) {
-        let cocktail = data.drinks[0]; 
+        let cocktail = data.drinks[0];
         let ingredients = [];
         for (let i = 1; i <= 15; i++) {
             if (cocktail[`strIngredient${i}`]) {
                 if (cocktail[`strMeasure${i}`]) {
-                    ingredients.push(`${cocktail[`strMeasure${i}`]} ${cocktail[`strIngredient${i}`]}`);
+                    ingredients.push({ amount: cocktail[`strMeasure${i}`], name: cocktail[`strIngredient${i}`] });
                 } else {
-                    ingredients.push(cocktail[`strIngredient${i}`]);
+                    ingredients.push({ amount: '', name: cocktail[`strIngredient${i}`] });
                 }
             } else {
                 break;
             }
         }
     
-        let ingredientsOutput = ingredients.map(ingredient => `<li>${ingredient}</li>`).join('');
+        let ingredientsOutput = ingredients
+            .map(
+                (ingredient) =>
+                    `<tr><td>${ingredient.amount}</td><td>${ingredient.name}</td></tr>`
+            )
+            .join('');
     
         let output = `
-        <div class="card mb-3 w-50 mx-auto">
+        <div class="card mb-3 fade-in">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="${cocktail.strDrinkThumb}" class="img-fluid rounded-start" alt="Random cocktail">
@@ -99,9 +118,17 @@ class CocktailUI {
                     <div class="card-body">
                         <h5 class="card-title">${cocktail.strDrink}</h5>
                         <div class="scrollable">
-                            <p class="card-text">
-                                <ul>${ingredientsOutput}</ul>
-                            </p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Amount</th>
+                                        <th>Ingredient</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${ingredientsOutput}
+                                </tbody>
+                            </table>
                             <p class="card-text"><small class="text-muted">${cocktail.strInstructions}</small></p>
                         </div>
                     </div>
@@ -113,42 +140,44 @@ class CocktailUI {
         document.getElementById('card-container').innerHTML = output;
     }
     
+    
 }
 
 class ErrorHandler {
-    static errorClass = 'alert alert-danger center-block w-50 mx-auto';
+    static errorClass = 'alert alert-danger center-block w-50 mx-auto alert-fade';
 
     static databaseError() {
+        const existingError = document.querySelector('.alert');
+        if (existingError) {
+            return;
+        }
         const div = document.createElement('div');
         div.className = this.errorClass
         div.appendChild(document.createTextNode('Something went wrong. Please try again.'));
         if (URL.includes("search.html")) {
             const container = document.querySelector('#search-container');
-            console.log(container);
-            const search = document.querySelector('#search-form');
-            console.log(search);
+            const search = document.querySelector('#search-results');
             container.insertBefore(div, search);
-            setTimeout(() => document.querySelector('.alert').remove(), 5000);
+            setTimeout(() => document.querySelector('.alert').remove(), 3000);
         }
         else {
             const section = document.querySelector('#card-section');
-            console.log(section);
             const card = document.querySelector('#card-container');
-            console.log(card);
             section.insertBefore(div, card);
-            setTimeout(() => document.querySelector('.alert').remove(), 5000);
+            setTimeout(() => document.querySelector('.alert').remove(), 3000);
         }
 
     }
 
-    // TODO: Fix repetition on inputError and noCocktailError -> new function
-
     static inputError() {
+        const existingError = document.querySelector('.alert');
+        if (existingError) {
+            return;
+        }
         const div = document.createElement('div');
         div.className = this.errorClass
         div.appendChild(document.createTextNode('Input field is empty.'));
         const container = document.querySelector('#input-container');
-        console.log(container);
         const input = document.querySelector('#input-form');
         console.log(input);
         container.insertBefore(div, input);
@@ -156,13 +185,15 @@ class ErrorHandler {
     }
 
     static noCocktailError() {
+        const existingError = document.querySelector('.alert');
+        if (existingError) {
+            return;
+        }
         const div = document.createElement('div');
         div.className = this.errorClass
         div.appendChild(document.createTextNode('No cocktail found.'));
         const container = document.querySelector('#input-container');
-        console.log(container);
         const input = document.querySelector('#input-form');
-        console.log(input);
         container.insertBefore(div, input);
         setTimeout(() => document.querySelector('.alert').remove(), 3000);
     }
@@ -176,11 +207,9 @@ class EventHandler {
             ErrorHandler.inputError();
         } else {
             try {
-                console.log("Getting cocktail");
                 const data = await CocktailDB.searchByName(input);
 
                 if (data.drinks === null) {
-                    console.log(data);
                     ErrorHandler.noCocktailError();
                     return;
                 }
@@ -194,9 +223,7 @@ class EventHandler {
 
     static async getAllDrinks() {
         try {
-            console.log("Getting all drinks");
             const data = await CocktailDB.searchAll();
-            console.log(data);
             CocktailUI.displayDrinks(data);
         }
         catch {
@@ -206,9 +233,7 @@ class EventHandler {
 
     static async getRandomDrink() {
         try {
-            console.log("Getting random drink");
             const data = await CocktailDB.getRandom();
-            console.log(data);
             CocktailUI.displayRandomDrink(data);
         }
         catch {
@@ -223,5 +248,3 @@ if (URL.includes("search.html")) {
 } else {
     document.addEventListener("DOMContentLoaded", EventHandler.getRandomDrink);
 }
-
-// TODO: Filtering by ingredient(s)
