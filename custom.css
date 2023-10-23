@@ -1,3 +1,23 @@
+/**
+ * This CSS file defines styles for a web page layout with a wrapper, main content area, and various animations.
+ * 
+ * The `html` and `body` elements are set to 100% height with no margin.
+ * 
+ * The `.wrapper` class is a flex container with a column direction and a minimum height of 100% viewport height.
+ * 
+ * The `main` element is set to flex-grow: 1 to fill the remaining space in the `.wrapper` container.
+ * 
+ * The `.card` class has a maximum height of fit-content and a width of auto.
+ * 
+ * The `.scrollable` class has a maximum height of 300px and overflow-y set to auto to enable scrolling.
+ * 
+ * The `.fade-in` class has a keyframe animation that fades in an element over 0.5 seconds.
+ * 
+ * The `.fly-in` class has a keyframe animation that scales an element from 0.75 to 1 and fades it in over 0.3 seconds.
+ * 
+ * The `.alert-fade` class has a keyframe animation that fades an element in over 3 seconds, holds it for 70% of the animation duration, and then fades it out.
+ */
+ 
 html, body {
     height: 100%;
     margin: 0;
