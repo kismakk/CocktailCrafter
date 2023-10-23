@@ -242,7 +242,7 @@ class EventHandler {
     }
 }
 
-if (URL.includes("search.html")) {
+if (URL.includes("search")) {
     searchBtn.addEventListener("click", EventHandler.getCocktail);
     document.addEventListener("DOMContentLoaded", EventHandler.getAllDrinks);
 } else {
