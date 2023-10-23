@@ -32,71 +32,87 @@ class CocktailDB {
 class CocktailUI {
 
     static displayDrinks(data) {
-        console.log(data);
         let cocktails = data.drinks;
-        console.log(cocktails);
         let output = '';
-        cocktails.forEach(drink => {
+    
+        cocktails.forEach(cocktail => {
+            let ingredients = [];
+            for (let i = 1; i <= 15; i++) {
+                if (cocktail[`strIngredient${i}`]) {
+                    if (cocktail[`strMeasure${i}`]) {
+                        ingredients.push(`${cocktail[`strMeasure${i}`]} ${cocktail[`strIngredient${i}`]}`);
+                    } else {
+                        ingredients.push(cocktail[`strIngredient${i}`]);
+                    }
+                } else {
+                    break;
+                }
+            }
+    
+            let ingredientsOutput = ingredients.map(ingredient => `<li>${ingredient}</li>`).join('');
+    
             output += `
             <div class="col-md-4 mb-3"> 
                 <div class="card">
-                    <img src="${drink.strDrinkThumb}" class="card-img-top" alt="Drink">
+                    <img src="${cocktail.strDrinkThumb}" class="card-img-top" alt="Drink">
                     <div class="card-body">
-                        <h5 class="card-title">${drink.strDrink}</h5>
-                        <a href="#" class="btn btn-danger btn-sm">See more</a>
+                        <h5 class="card-title">${cocktail.strDrink}</h5>
+                        <div class="scrollable">
+                            <p class="card-text">
+                                <ul>${ingredientsOutput}</ul>
+                            </p>
+                            <p class="card-text"><small class="text-muted">${cocktail.strInstructions}</small></p>
+                        </div>
                     </div>
                 </div>
-            </div>    
-            `;
+            </div>`;
         });
+    
         document.getElementById('search-results').innerHTML = output;
     }
+    
 
     static displayRandomDrink(data) {
-        let cocktail = data.drinks;
-        console.log(cocktail);
+        let cocktail = data.drinks[0]; 
         let ingredients = [];
-        cocktail.forEach(cocktail => {
-            for (let i = 1; i <= 15; i++) {
-                if (cocktail[`strIngredient${i}`]) {
-                    if (cocktail[`strMeasure${i}`]) {ingredients.push(` ${cocktail[`strMeasure${i}`]} ${cocktail[`strIngredient${i}`]}`);
-                        continue;
-                        }
+        for (let i = 1; i <= 15; i++) {
+            if (cocktail[`strIngredient${i}`]) {
+                if (cocktail[`strMeasure${i}`]) {
+                    ingredients.push(`${cocktail[`strMeasure${i}`]} ${cocktail[`strIngredient${i}`]}`);
+                } else {
+                    ingredients.push(cocktail[`strIngredient${i}`]);
                 }
+            } else {
+                break;
             }
-        });
-
-        let ingredientsOutput = '';
-        ingredients.forEach(ingredient => {
-            ingredientsOutput += `<li class="card-text">${ingredient}</li>`;
-        });
-
-        console.log(ingredients, cocktail.strDrinkThumb, cocktail.strDrink, cocktail.strInstructions);
-
-        let output = '';
-        cocktail.forEach(cocktail => {
-            output += `
-             <div class="card mb-3 w-50 mx-auto">
+        }
+    
+        let ingredientsOutput = ingredients.map(ingredient => `<li>${ingredient}</li>`).join('');
+    
+        let output = `
+        <div class="card mb-3 w-50 mx-auto">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="${cocktail.strDrinkThumb}" class="img-fluid rounded-start" alt="Random cocktail">
                 </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">${cocktail.strDrink}</h5>
-                    <div class="scrollable">
-                        <p class="card-text">${ingredientsOutput}</p>
-                        <p class="card-text"><small class="text-muted">${cocktail.strInstructions}</small></p>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">${cocktail.strDrink}</h5>
+                        <div class="scrollable">
+                            <p class="card-text">
+                                <ul>${ingredientsOutput}</ul>
+                            </p>
+                            <p class="card-text"><small class="text-muted">${cocktail.strInstructions}</small></p>
+                        </div>
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
-      </div>
         `;
-        console.log(output);
-        document.getElementById('card-container').innerHTML = output
-        });
+    
+        document.getElementById('card-container').innerHTML = output;
     }
+    
 }
 
 class ErrorHandler {
