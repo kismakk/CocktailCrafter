@@ -33,7 +33,7 @@ I refactored all the functions to their own classes as static methods that can b
 - [x] _Successful implementation of an AJAX call or Fetch._
 - [x] _Data from the asynchronous call is displayed on the webpage._
 - [x] _Error handling is implemented (for failed API calls, etc.)._
-- [ ] _Effective use of asynchronous data to enhance user experience (like filtering, sorting)._
+- [x] _Effective use of asynchronous data to enhance user experience (like filtering, sorting)._
 
-Error handling can be found in the ErrorHandler class and it's functions. Alert cards are shown when an error occurs.
+All of the above can be found in the app.js file. Fetch is used to get information about cocktails from CocktailDB. Then, the data is filtered to only show the essential components (e.g ingredients, cocktail name etc.). Error handlers are implemented in the ErrorHandler class to display cards to show what the error is and they are timed using timers. 
 
