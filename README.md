@@ -3,9 +3,9 @@ Visit the website here: [Cocktail Crafter](https://cocktailcrafter.pages.dev)
 
 ## About
 
-Cocktail Crafter is a website made for users to search for all kinds of cocktails.
+Cocktail Crafter is a website made for users to search for all kinds of cocktails by name. 
 
-Website is made with JS/HTML/CSS and Bootstrap, and is powered by [free Cocktail API](https://www.thecocktaildb.com/api.php).
+Website is made with JS/HTML/CSS and Bootstrap for the purpose of learning the basics of frontend development.
 
 Website is a final assignment for "Frontend Web Development" course in Oulu University of Applied Sciences.
 
@@ -52,3 +52,24 @@ All of the above can be found in the app.js file. Fetch is used to get informati
 
 </details>
 
+## Technologies used
+
+- Vanilla Javascript
+- HTML
+- CSS (mainly for animations)
+- Bootstrap 5 for styling
+- [Cocktail API](https://www.thecocktaildb.com/api.php)
+
+## Features 
+
+- Simple, fast, and elegant UI
+- Powerful search page
+- Details of  searched cocktails including:
+    - Picture
+    - Ingredients
+    - Measurements
+    - Instructions
+
+## License
+
+To see the license, click the tab next to README.
