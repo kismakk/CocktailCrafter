@@ -1,6 +1,19 @@
 # Cocktail Crafter
 Visit the website here: [Cocktail Crafter](https://cocktailcrafter.pages.dev)
-## Requirements and implementation
+
+## About
+
+Cocktail Crafter is a website made for users to search for all kinds of cocktails.
+
+Website is made with JS/HTML/CSS and Bootstrap, and is powered by [free Cocktail API](https://www.thecocktaildb.com/api.php).
+
+Website is a final assignment for "Frontend Web Development" course in Oulu University of Applied Sciences.
+
+<details closed>
+<summary>
+  Requirements for course and implementation
+</summary> <br />
+
 ### HTML
 - [x] _Basic HTML structure is present._
 - [x] _HTML structure with clear content differentiation (headings, paragraphs, lists)._
@@ -36,4 +49,6 @@ I refactored all the functions to their own classes as static methods that can b
 - [x] _Effective use of asynchronous data to enhance user experience (like filtering, sorting)._
 
 All of the above can be found in the app.js file. Fetch is used to get information about cocktails from CocktailDB. Then, the data is filtered to only show the essential components (e.g ingredients, cocktail name etc.). Error handlers are implemented in the ErrorHandler class to display cards to show what the error is and they are timed using timers. 
+
+</details>
 
